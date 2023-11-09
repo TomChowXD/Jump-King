@@ -132,9 +132,9 @@ class Population {
         this.players = [];
         for (let i = 0; i < nextGen.length; i++) {
             this.players[i] = nextGen[i];
-            // if(!this.newLevelReached && this.currentBestLevelReached !== 0){// && this.currentBestLevelReached !== 37){
-            //     this.players[i].loadStartOfBestLevelPlayerState();
-            // }<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            if(!this.newLevelReached && this.currentBestLevelReached !== 0){// && this.currentBestLevelReached !== 37){
+                this.players[i].loadStartOfBestLevelPlayerState();
+            }
         }
 
         this.gen++;
@@ -144,9 +144,9 @@ class Population {
         this.fitnessSum = 0;
         for (let i = 0; i < this.players.length; i++) {
             this.players[i].CalculateFitness();
-            // if (this.players[i].bestLevelReached < this.players[this.bestPlayerIndex].bestLevelReached) {
-            //     this.players[i].fitness = 0;
-            // }<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            if (this.players[i].bestLevelReached < this.players[this.bestPlayerIndex].bestLevelReached) {
+                this.players[i].fitness = 0;
+            }
             this.fitnessSum += this.players[i].fitness;
         }
     }

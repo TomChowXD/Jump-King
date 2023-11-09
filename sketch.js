@@ -19,14 +19,14 @@ let run3Image = null;
 let fallenImage = null;
 let fallImage = null;
 let showingLines = false;
-let showingCoins = false;
+let showingCoins = true;
 let levelImages = [];
 
 let placingPlayer = false;
-let placingCoins = false;
+let placingCoins = true;
 let playerPlaced = false;
 
-let testingSinglePlayer = true;
+let testingSinglePlayer = false;
 
 
 let fallSound = null;
